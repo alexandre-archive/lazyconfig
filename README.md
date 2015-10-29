@@ -1,0 +1,2 @@
+# lazyconfig
+Yaml made lazy
