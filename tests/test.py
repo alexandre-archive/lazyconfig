@@ -3,7 +3,7 @@
 import sys
 import unittest
 
-sys.path.append('./..')
+sys.path.append('./')
 
 from lazyconfig import lazyconfig, LazyConfig
 
@@ -17,19 +17,19 @@ class TestLazyConfig(unittest.TestCase):
     def test_custom_filename(self):
         self.assertIsNone(LazyConfig.yaml_file)
         self.assertFalse(LazyConfig.loaded)
-        lazyconfig.set_config_file('data/example.yaml')
+        lazyconfig.set_config_file('tests/data/example.yaml')
         lazyconfig.load()
         self.assertIsNotNone(lazyconfig.config)
-        self.assertEquals(LazyConfig.yaml_file, 'data/example.yaml')
+        self.assertEquals(LazyConfig.yaml_file, 'tests/data/example.yaml')
         self.assertTrue(LazyConfig.loaded)
 
     def test_custom_filename_class(self):
         self.assertIsNone(LazyConfig.yaml_file)
         self.assertFalse(LazyConfig.loaded)
-        LazyConfig.set_config_file('data/example.yaml')
+        LazyConfig.set_config_file('tests/data/example.yaml')
         lazyconfig.load()
         self.assertIsNotNone(lazyconfig.config)
-        self.assertEquals(LazyConfig.yaml_file, 'data/example.yaml')
+        self.assertEquals(LazyConfig.yaml_file, 'tests/data/example.yaml')
         self.assertTrue(LazyConfig.loaded)
 
     def test_default_filename(self):
